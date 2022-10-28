@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from contact_form.views import ContactAPIView, CreateContactAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/contacts/', ContactAPIView.as_view(), name = "contats_api"),
+    path('api/contacts/create/', CreateContactAPIView.as_view(), name = "create_contats_api")
 ]
