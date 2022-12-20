@@ -15,6 +15,9 @@ class Contact(models.Model):
         max_length = 255, 
         verbose_name = "Фамилия"
     )
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
 
     def __str__(self):
         return self.name 
